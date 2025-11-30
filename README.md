@@ -14,6 +14,7 @@ Este repositorio sigue una estructura de *commits* diaria (`Día 1`, `Día 2`, e
 
 | Día | Tema Principal | Archivos Modificados |
 | :---: | :--- | :--- |
+| **1** | Desarrollo Odoo en Docker | [https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/469f5c81f4b6d02d48ca3ffdeebb7059541bb9c3](https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/469f5c81f4b6d02d48ca3ffdeebb7059541bb9c3) |
 | **...** | ... | ... |
 
 ---
