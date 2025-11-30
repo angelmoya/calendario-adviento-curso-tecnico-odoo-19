@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_library_tag_tree" model="ir.ui.view">
+        <field name="name">library.tag.tree</field>
+        <field name="model">library.tag</field>
+        <field name="arch" type="xml">
+            <list string="Etiquetas de la Biblioteca">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_library_tag_form" model="ir.ui.view">
+        <field name="name">library.tag.form</field>
+        <field name="model">library.tag</field>
+        <field name="arch" type="xml">
+            <form string="Detalles de la Etiqueta">
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <notebook>
+                        <page name="books_page" string="Libros">
+                            <field name="book_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_library_tag" model="ir.actions.act_window">
+        <field name="name">Etiqueta</field>
+        <field name="res_model">library.tag</field>
+        <field name="view_mode">list,form</field> <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                ¡Crea tu primera etiqueta de la biblioteca!
+            </p>
+        </field>
+    </record>
+
+
+
+    <menuitem 
+        id="menu_library_tag" 
+        name="Etiqueta" 
+        parent="library.menu_library_master" 
+        action="action_library_tag" 
+        sequence="10"/>
+
+</odoo>

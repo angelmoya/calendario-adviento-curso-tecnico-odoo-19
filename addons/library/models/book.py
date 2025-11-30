@@ -22,3 +22,10 @@ class LibraryBook(models.Model):
         comodel_name='library.author',
         string='Author'
     )
+    tag_ids = fields.Many2many(
+        comodel_name='library.tag',
+        relation='library_book_tag_rel',
+        column1='book_id',
+        column2='tag_id',
+        string='Tags'
+    )

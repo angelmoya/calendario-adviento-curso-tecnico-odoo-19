@@ -5,3 +5,8 @@ class LibraryAuthor(models.Model):
     _description = 'Author'
 
     name = fields.Char(string='Name', required=True)
+    book_ids = fields.One2many(
+        comodel_name='library.book',
+        inverse_name='author_id',
+        string='Books'
+    )

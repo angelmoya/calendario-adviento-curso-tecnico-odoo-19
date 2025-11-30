@@ -33,6 +33,9 @@
                             <field name="is_best_seller"/>
                             <field name="book_genre"/>
                         </group>
+                        <group>
+                            <field name="tag_ids" widget="many2many_tags"/>
+                        </group>
                     </group>
                     <notebook>
                         <page name="description_page" string="Descripción">
