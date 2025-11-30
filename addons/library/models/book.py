@@ -18,3 +18,7 @@ class LibraryBook(models.Model):
         ('history', 'History'),
         ('children', 'Children'),
     ], string='Book Genre')
+    author_id = fields.Many2one(
+        comodel_name='library.author',
+        string='Author'
+    )

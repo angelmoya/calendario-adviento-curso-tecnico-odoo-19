@@ -8,6 +8,7 @@
             <list string="Libros de la Biblioteca">
                 <field name="name"/>
                 <field name="isbn"/>
+                <field name="author_id"/>
                 <field name="is_best_seller"/>
                 <field name="date_published"/>
             </list>
@@ -28,6 +29,7 @@
                             <field name="edition_number"/>
                         </group>
                         <group>
+                            <field name="author_id"/>
                             <field name="is_best_seller"/>
                             <field name="book_genre"/>
                         </group>
