@@ -15,4 +15,7 @@ Módulo de ejemplo desarrollado como parte de un curso de desarrollo en Odoo.
     'category': 'Customization',
     'version': '19.0.1.0.0',
     'depends': ['sale_management', 'purchase', 'stock', 'account'],
+    'data': [
+        'views/book_views.xml',
+    ]
 }

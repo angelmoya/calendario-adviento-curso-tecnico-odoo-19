@@ -1,7 +1,7 @@
 from odoo import models, fields
 
-class Book(models.Model):
-    _name = 'book'
+class LibraryBook(models.Model):
+    _name = 'library.book'
     _description = 'Book'
 
     name = fields.Char(string='Name', required=True)

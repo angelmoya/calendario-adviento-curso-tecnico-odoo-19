@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_library_book_tree" model="ir.ui.view">
+        <field name="name">library.book.tree</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <list string="Libros de la Biblioteca">
+                <field name="name"/>
+                <field name="isbn"/>
+                <field name="is_best_seller"/>
+                <field name="date_published"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_library_book_form" model="ir.ui.view">
+        <field name="name">library.book.form</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form string="Detalles del Libro">
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <group>
+                        <group>
+                            <field name="isbn"/>
+                            <field name="date_published"/>
+                            <field name="edition_number"/>
+                        </group>
+                        <group>
+                            <field name="is_best_seller"/>
+                            <field name="book_genre"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description_page" string="Descripción">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_library_book" model="ir.actions.act_window">
+        <field name="name">Libros</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">list,form</field> <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                ¡Crea tu primer libro de la biblioteca!
+            </p>
+        </field>
+    </record>
+
+    <menuitem 
+        id="menu_library_root" 
+        name="Biblioteca" 
+        sequence="10" 
+        web_icon="fa fa-book"/> 
+    
+    <menuitem 
+        id="menu_library_master" 
+        name="Maestros" 
+        parent="menu_library_root" 
+        sequence="10"/>
+
+    <menuitem 
+        id="menu_library_book" 
+        name="Libros" 
+        parent="menu_library_master" 
+        action="action_library_book" 
+        sequence="10"/>
+
+</odoo>
