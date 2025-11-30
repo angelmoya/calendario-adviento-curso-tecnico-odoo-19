@@ -17,5 +17,7 @@ Módulo de ejemplo desarrollado como parte de un curso de desarrollo en Odoo.
     'depends': ['sale_management', 'purchase', 'stock', 'account'],
     'data': [
         'views/book_views.xml',
+        'security/library_security.xml',
+        'security/ir.model.access.csv',
     ]
 }
