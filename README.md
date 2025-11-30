@@ -19,6 +19,7 @@ Este repositorio sigue una estructura de *commits* diaria (`Día 1`, `Día 2`, e
 | **3** | Modelos de datos y campos básicos| [https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/36c74388d1b68bdb5f032f095fdb58b070d607be](https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/36c74388d1b68bdb5f032f095fdb58b070d607be) |
 | **4** | Vistas XML: Formulario, Lista y Menú | [https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/baec2b0dc718a4e0425135358fb1fc412c2f7c34](https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/baec2b0dc718a4e0425135358fb1fc412c2f7c34) |
 | **5** | Seguridad y Permisos | [https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/aaec200986e9fda6895f9037df307d2d27ff12d4](https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/aaec200986e9fda6895f9037df307d2d27ff12d4) |
+| **6** | Relaciones en Odoo: El campo Many2One | [https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/cdf7fa2d140cbea7133320002ed6f83bf30584a3](https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/cdf7fa2d140cbea7133320002ed6f83bf30584a3) |
 | **...** | ... | ... |
 
 ---
