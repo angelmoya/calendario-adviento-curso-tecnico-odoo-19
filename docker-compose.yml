@@ -9,6 +9,9 @@ services:
       - odoo-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
+    # Bypass entrypoint to prevent Odoo server from starting automatically
+    # Uncomment the following line to keep container running without starting Odoo
+    # entrypoint: ["tail", "-f", "/dev/null"]
 
   postgres:
     image: postgres:18
