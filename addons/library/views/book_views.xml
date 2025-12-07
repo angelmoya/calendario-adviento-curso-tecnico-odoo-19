@@ -42,6 +42,9 @@
                             <field name="description"/>
                         </page>
                         <page name="product" string="Products">
+                            <group>
+                                <field name="product_qty"/>
+                            </group>
                             <field name="product_ids"/>
                         </page>
                     </notebook>

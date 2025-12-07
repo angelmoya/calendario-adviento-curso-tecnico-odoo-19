@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import api, models, fields
 
 class LibraryBook(models.Model):
     _name = 'library.book'
@@ -34,3 +34,12 @@ class LibraryBook(models.Model):
         inverse_name='book_id',
         string='Products'
     )
+    product_qty = fields.Integer(
+        string='Product Quantity',
+        compute='_compute_product_qty'
+    )
+
+    @api.depends('product_ids')
+    def _compute_product_qty(self):
+        for book in self:
+            book.product_qty = len(book.product_ids)
