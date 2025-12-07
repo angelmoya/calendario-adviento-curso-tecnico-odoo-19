@@ -21,5 +21,6 @@ Módulo de ejemplo desarrollado como parte de un curso de desarrollo en Odoo.
         'views/tag_views.xml',
         'security/library_security.xml',
         'security/ir.model.access.csv',
+        'views/product_template_views.xml',
     ]
 }
