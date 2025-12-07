@@ -20,6 +20,9 @@
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <form string="Detalles del Libro">
+                <header>
+                    <button name="action_open_books_with_same_tags" type="object" string="Open Books With Same Tags"/>
+                </header>
                 <sheet>
                     <h1><field name="name"/></h1>
                     <group>
@@ -35,6 +38,8 @@
                         </group>
                         <group>
                             <field name="tag_ids" widget="many2many_tags"/>
+                            <button name="action_clean_tags" type="object" string="Clean Tags" class="oe_highlight"/>
+                            <button name="action_update_author_tags" type="object" string="Update Author Tags"/>
                         </group>
                     </group>
                     <notebook>

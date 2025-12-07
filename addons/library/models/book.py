@@ -52,3 +52,27 @@ class LibraryBook(models.Model):
         for book in self:
             if book.author_id:
                 book.tag_ids = book.author_id.default_tag_ids.ids
+    
+    def action_clean_tags(self):
+        for book in self:
+            book.tag_ids = False
+    
+    def action_update_author_tags(self):
+        # for book in self:
+        #     if book.author_id:
+        for book in self.filtered(lambda b: b.author_id):
+            book.author_id.default_tag_ids = book.tag_ids
+    
+    def action_open_books_with_same_tags(self):
+        self.ensure_one()
+        domain = [('tag_ids', 'in', tag.id) for tag in self.tag_ids]
+        domain.append(('id', '!=', self.id))
+        books = self.env['library.book'].search(domain)
+        return {
+            'name': 'Books with Same Tags',
+            'type': 'ir.actions.act_window',
+            'res_model': 'library.book',
+            'view_mode': 'list,form',
+            # 'domain': [('tag_ids', '==', self.tag_ids.ids)],
+            'domain': [('id', 'in', books.ids)],
+        }
