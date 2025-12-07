@@ -1,11 +1,12 @@
 from odoo import api, models, fields
+from odoo.exceptions import ValidationError
 
 class LibraryBook(models.Model):
     _name = 'library.book'
     _description = 'Book'
 
     name = fields.Char(string='Name', required=True)
-    isbn = fields.Char(string='ISBN', required=True)
+    isbn = fields.Char(string='ISBN', required=True, copy=False)
     is_best_seller = fields.Boolean(string='Is Best Seller', default=False)
     edition_number = fields.Float(string='Edition Number')
     description = fields.Text(string='Description')
@@ -41,6 +42,21 @@ class LibraryBook(models.Model):
         string='Product Quantity',
         compute='_compute_product_qty'
     )
+
+    # _sql_constraints = [
+    #     ('isbn_unique', 'unique(isbn)', 'The ISBN must be unique across all books.')
+    # ]
+    _check_isbn_unique = models.Constraint(
+        'unique(isbn)',
+        'The ISBN must be unique across all books.',
+)
+    @api.constrains('date_published')
+    def _check_date_published(self):
+        # for book in self:
+        #     if book.date_published and book.date_published > fields.Date.today():
+        if self.filtered(lambda b: b.date_published and b.date_published > fields.Date.today()):
+            raise ValidationError('The date published cannot be in the future.')
+    
 
     @api.depends('product_ids')
     def _compute_product_qty(self):
