@@ -58,6 +58,30 @@
         </field>
     </record>
 
+    <record id="view_library_book_search" model="ir.ui.view">
+        <field name="name">library.book.search</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Libros">
+                <field name="name"/>
+                <field name="isbn"/>
+                <field name="author_id"/>
+                <field name="tag_ids"/>
+                <filter name="best_sellers" string="Best Sellers" domain="[('is_best_seller','=',True)]"/>
+                <filter name="no_product" string="No Product" domain="[('product_qty','=',0)]"/>
+                <separator/>
+                <filter name="novel" string="Novel" domain="[('book_genre','=','novel')]"/>
+                <filter name="fiction" string="Fiction" domain="[('book_genre','=','fiction')]"/>
+                <filter name="biography" string="Biography" domain="[('book_genre','=','biography')]"/>
+                <separator/>
+                <filter name="group_by_genre" string="Group by Genre" context="{'group_by':'book_genre'}"/>
+                <filter name="group_by_author" string="Group by Author" context="{'group_by':'author_id'}"/>
+                <filter name="group_by_best_seller" string="Group by Best Seller" context="{'group_by':'is_best_seller'}"/>
+                <filter name="group_by_date_published" string="Group by Date Published" context="{'group_by':'date_published'}"/>
+            </search>
+        </field>
+    </record>
+
     <record id="action_library_book" model="ir.actions.act_window">
         <field name="name">Libros</field>
         <field name="res_model">library.book</field>

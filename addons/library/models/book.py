@@ -40,7 +40,8 @@ class LibraryBook(models.Model):
     )
     product_qty = fields.Integer(
         string='Product Quantity',
-        compute='_compute_product_qty'
+        compute='_compute_product_qty',
+        store=True
     )
 
     # _sql_constraints = [
