@@ -25,6 +25,7 @@ Este repositorio sigue una estructura de *commits* diaria (`Día 1`, `Día 2`, e
 | **9** | Herencia de vistas | [https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/1b0fdb2e6852a0f9429cf54fd5ca73eab7e7fe9b] (https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/1b0fdb2e6852a0f9429cf54fd5ca73eab7e7fe9b) |
 | **10** | Campos calculados y api.depends | [https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/332e59376a722535c5e4b7f6e27c236b664dfcfb] (https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/332e59376a722535c5e4b7f6e27c236b664dfcfb) |
 | **11** | Onchange | [https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/5b15b6c075747934b5a54271253d4e282479b4b7] (https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/5b15b6c075747934b5a54271253d4e282479b4b7) |
+| **11** | Botones y métodos | [https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/ddd6e9426d71c26e4e04cae90801136b8936e36e] (https://github.com/angelmoya/calendario-adviento-curso-tecnico-odoo-19/tree/ddd6e9426d71c26e4e04cae90801136b8936e36e)
 | **...** | ... | ... |
 
 ---
