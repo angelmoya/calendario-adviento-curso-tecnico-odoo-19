@@ -41,6 +41,9 @@
                         <page name="description_page" string="Descripción">
                             <field name="description"/>
                         </page>
+                        <page name="product" string="Products">
+                            <field name="product_ids"/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

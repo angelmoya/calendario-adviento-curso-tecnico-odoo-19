@@ -29,3 +29,8 @@ class LibraryBook(models.Model):
         column2='tag_id',
         string='Tags'
     )
+    product_ids = fields.One2many(
+        comodel_name='product.template',
+        inverse_name='book_id',
+        string='Products'
+    )
