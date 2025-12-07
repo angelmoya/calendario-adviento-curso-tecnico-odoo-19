@@ -10,3 +10,7 @@ class LibraryAuthor(models.Model):
         inverse_name='author_id',
         string='Books'
     )
+    default_tag_ids = fields.Many2many(
+        comodel_name='library.tag',
+        string='Default Tags'
+    )

@@ -22,6 +22,9 @@
                         <page name="books_page" string="Libros">
                             <field name="book_ids"/>
                         </page>
+                        <page name="default_tags_page" string="Default Tags">
+                            <field name="default_tag_ids" widget="many2many_tags"/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

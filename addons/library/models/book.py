@@ -27,7 +27,10 @@ class LibraryBook(models.Model):
         relation='library_book_tag_rel',
         column1='book_id',
         column2='tag_id',
-        string='Tags'
+        string='Tags',
+        compute='_compute_tag_ids',
+        store=True,
+        readonly=False
     )
     product_ids = fields.One2many(
         comodel_name='product.template',
@@ -43,3 +46,9 @@ class LibraryBook(models.Model):
     def _compute_product_qty(self):
         for book in self:
             book.product_qty = len(book.product_ids)
+    
+    @api.depends('author_id')
+    def _compute_tag_ids(self):
+        for book in self:
+            if book.author_id:
+                book.tag_ids = book.author_id.default_tag_ids.ids
