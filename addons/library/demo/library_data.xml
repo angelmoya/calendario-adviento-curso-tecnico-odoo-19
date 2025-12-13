@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Tags -->
+        <record id="tag_novel" model="library.tag">
+            <field name="name">Novel</field>
+        </record>
+        <record id="tag_fiction" model="library.tag">
+            <field name="name">Fiction</field>
+        </record>
+        <record id="tag_biography" model="library.tag">
+            <field name="name">Biography</field>
+        </record>
+        <record id="tag_history" model="library.tag">
+            <field name="name">History</field>
+        </record>
+        <record id="tag_children" model="library.tag">
+            <field name="name">Children</field>
+        </record>
+
+        <!-- Authors -->
+        <record id="author_1" model="library.author">
+            <field name="name">Gabriel Garcia Marquez</field>
+            <field name="default_tag_ids" eval="[(6, 0, [ref('tag_novel'), ref('tag_fiction')])]"/>
+        </record>
+        <record id="author_2" model="library.author">
+            <field name="name">Isaac Asimov</field>
+            <field name="default_tag_ids" eval="[(6, 0, [ref('tag_fiction')])]"/>
+        </record>
+        <record id="author_3" model="library.author">
+            <field name="name">Walter Isaacson</field>
+            <field name="default_tag_ids" eval="[(6, 0, [ref('tag_biography'), ref('tag_history')])]"/>
+        </record>
+        <record id="author_4" model="library.author">
+            <field name="name">J.K. Rowling</field>
+            <field name="default_tag_ids" eval="[(6, 0, [ref('tag_children'), ref('tag_fiction')])]"/>
+        </record>
+        <record id="author_5" model="library.author">
+            <field name="name">Yuval Noah Harari</field>
+            <field name="default_tag_ids" eval="[(6, 0, [ref('tag_history')])]"/>
+        </record>
+
+        <!-- Books for Author 1 -->
+        <record id="book_1_1" model="library.book">
+            <field name="name">One Hundred Years of Solitude</field>
+            <field name="isbn">978-0060883287</field>
+            <field name="author_id" ref="author_1"/>
+            <field name="book_genre">novel</field>
+            <field name="date_published">1967-05-30</field>
+        </record>
+        <record id="book_1_2" model="library.book">
+            <field name="name">Love in the Time of Cholera</field>
+            <field name="isbn">978-0307389732</field>
+            <field name="author_id" ref="author_1"/>
+            <field name="book_genre">novel</field>
+            <field name="date_published">1985-01-01</field>
+        </record>
+        <record id="book_1_3" model="library.book">
+            <field name="name">Chronicle of a Death Foretold</field>
+            <field name="isbn">978-1400034710</field>
+            <field name="author_id" ref="author_1"/>
+            <field name="book_genre">novel</field>
+            <field name="date_published">1981-01-01</field>
+        </record>
+        <record id="book_1_4" model="library.book">
+            <field name="name">The Autumn of the Patriarch</field>
+            <field name="isbn">978-0060882822</field>
+            <field name="author_id" ref="author_1"/>
+            <field name="book_genre">novel</field>
+            <field name="date_published">1975-01-01</field>
+        </record>
+        <record id="book_1_5" model="library.book">
+            <field name="name">Of Love and Other Demons</field>
+            <field name="isbn">978-0140256360</field>
+            <field name="author_id" ref="author_1"/>
+            <field name="book_genre">novel</field>
+            <field name="date_published">1994-01-01</field>
+        </record>
+
+        <!-- Books for Author 2 -->
+        <record id="book_2_1" model="library.book">
+            <field name="name">I, Robot</field>
+            <field name="isbn">978-0553382563</field>
+            <field name="author_id" ref="author_2"/>
+            <field name="book_genre">science_fiction</field>
+            <field name="date_published">1950-12-02</field>
+        </record>
+        <record id="book_2_2" model="library.book">
+            <field name="name">Foundation</field>
+            <field name="isbn">978-0553803719</field>
+            <field name="author_id" ref="author_2"/>
+            <field name="book_genre">science_fiction</field>
+            <field name="date_published">1951-06-01</field>
+        </record>
+        <record id="book_2_3" model="library.book">
+            <field name="name">The Caves of Steel</field>
+            <field name="isbn">978-0553293403</field>
+            <field name="author_id" ref="author_2"/>
+            <field name="book_genre">science_fiction</field>
+            <field name="date_published">1954-01-01</field>
+        </record>
+        <record id="book_2_4" model="library.book">
+            <field name="name">The Naked Sun</field>
+            <field name="isbn">978-0553293397</field>
+            <field name="author_id" ref="author_2"/>
+            <field name="book_genre">science_fiction</field>
+            <field name="date_published">1957-01-01</field>
+        </record>
+        <record id="book_2_5" model="library.book">
+            <field name="name">Prelude to Foundation</field>
+            <field name="isbn">978-0553278394</field>
+            <field name="author_id" ref="author_2"/>
+            <field name="book_genre">science_fiction</field>
+            <field name="date_published">1988-01-01</field>
+        </record>
+
+        <!-- Books for Author 3 -->
+        <record id="book_3_1" model="library.book">
+            <field name="name">Steve Jobs</field>
+            <field name="isbn">978-1451648539</field>
+            <field name="author_id" ref="author_3"/>
+            <field name="book_genre">biography</field>
+            <field name="date_published">2011-10-24</field>
+        </record>
+        <record id="book_3_2" model="library.book">
+            <field name="name">Leonardo da Vinci</field>
+            <field name="isbn">978-1501139154</field>
+            <field name="author_id" ref="author_3"/>
+            <field name="book_genre">biography</field>
+            <field name="date_published">2017-10-17</field>
+        </record>
+        <record id="book_3_3" model="library.book">
+            <field name="name">Einstein: His Life and Universe</field>
+            <field name="isbn">978-0743264730</field>
+            <field name="author_id" ref="author_3"/>
+            <field name="book_genre">biography</field>
+            <field name="date_published">2007-04-10</field>
+        </record>
+        <record id="book_3_4" model="library.book">
+            <field name="name">The Innovators</field>
+            <field name="isbn">978-1476708690</field>
+            <field name="author_id" ref="author_3"/>
+            <field name="book_genre">history</field>
+            <field name="date_published">2014-10-07</field>
+        </record>
+        <record id="book_3_5" model="library.book">
+            <field name="name">Benjamin Franklin: An American Life</field>
+            <field name="isbn">978-0684807614</field>
+            <field name="author_id" ref="author_3"/>
+            <field name="book_genre">biography</field>
+            <field name="date_published">2003-07-01</field>
+        </record>
+
+        <!-- Books for Author 4 -->
+        <record id="book_4_1" model="library.book">
+            <field name="name">Harry Potter and the Sorcerer's Stone</field>
+            <field name="isbn">978-0590353427</field>
+            <field name="author_id" ref="author_4"/>
+            <field name="book_genre">children</field>
+            <field name="date_published">1997-06-26</field>
+        </record>
+        <record id="book_4_2" model="library.book">
+            <field name="name">Harry Potter and the Chamber of Secrets</field>
+            <field name="isbn">978-0439064873</field>
+            <field name="author_id" ref="author_4"/>
+            <field name="book_genre">children</field>
+            <field name="date_published">1998-07-02</field>
+        </record>
+        <record id="book_4_3" model="library.book">
+            <field name="name">Harry Potter and the Prisoner of Azkaban</field>
+            <field name="isbn">978-0439136365</field>
+            <field name="author_id" ref="author_4"/>
+            <field name="book_genre">children</field>
+            <field name="date_published">1999-07-08</field>
+        </record>
+        <record id="book_4_4" model="library.book">
+            <field name="name">Harry Potter and the Goblet of Fire</field>
+            <field name="isbn">978-0439139601</field>
+            <field name="author_id" ref="author_4"/>
+            <field name="book_genre">children</field>
+            <field name="date_published">2000-07-08</field>
+        </record>
+        <record id="book_4_5" model="library.book">
+            <field name="name">Harry Potter and the Order of the Phoenix</field>
+            <field name="isbn">978-0439358071</field>
+            <field name="author_id" ref="author_4"/>
+            <field name="book_genre">children</field>
+            <field name="date_published">2003-06-21</field>
+        </record>
+
+        <!-- Books for Author 5 -->
+        <record id="book_5_1" model="library.book">
+            <field name="name">Sapiens: A Brief History of Humankind</field>
+            <field name="isbn">978-0062316097</field>
+            <field name="author_id" ref="author_5"/>
+            <field name="book_genre">history</field>
+            <field name="date_published">2015-02-10</field>
+        </record>
+        <record id="book_5_2" model="library.book">
+            <field name="name">Homo Deus: A Brief History of Tomorrow</field>
+            <field name="isbn">978-0062464316</field>
+            <field name="author_id" ref="author_5"/>
+            <field name="book_genre">history</field>
+            <field name="date_published">2017-02-21</field>
+        </record>
+        <record id="book_5_3" model="library.book">
+            <field name="name">21 Lessons for the 21st Century</field>
+            <field name="isbn">978-0525512172</field>
+            <field name="author_id" ref="author_5"/>
+            <field name="book_genre">history</field>
+            <field name="date_published">2018-08-30</field>
+        </record>
+        <record id="book_5_4" model="library.book">
+            <field name="name">Sapiens: A Graphic History, Volume 1</field>
+            <field name="isbn">978-0063051331</field>
+            <field name="author_id" ref="author_5"/>
+            <field name="book_genre">history</field>
+            <field name="date_published">2020-10-27</field>
+        </record>
+        <record id="book_5_5" model="library.book">
+            <field name="name">Unstoppable Us, Volume 1: How Humans Took Over the World</field>
+            <field name="isbn">978-0593643479</field>
+            <field name="author_id" ref="author_5"/>
+            <field name="book_genre">children</field>
+            <field name="date_published">2022-10-18</field>
+        </record>
+
+    </data>
+</odoo>

@@ -16,11 +16,14 @@ Módulo de ejemplo desarrollado como parte de un curso de desarrollo en Odoo.
     'version': '19.0.1.0.0',
     'depends': ['sale_management', 'purchase', 'stock', 'account'],
     'data': [
+        'security/library_security.xml',
+        'security/ir.model.access.csv',
         'views/book_views.xml',
         'views/author_views.xml',
         'views/tag_views.xml',
-        'security/library_security.xml',
-        'security/ir.model.access.csv',
         'views/product_template_views.xml',
-    ]
+    ],
+    'demo': [
+        'demo/library_data.xml',
+    ],
 }
