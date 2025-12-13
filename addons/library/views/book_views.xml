@@ -21,6 +21,7 @@
         <field name="arch" type="xml">
             <form string="Detalles del Libro">
                 <header>
+                    <button name="%(action_wizard_duplicate_book)d" type="action" string="Duplicate Book" class="oe_highlight"/>
                     <button name="action_open_books_with_same_tags" type="object" string="Open Books With Same Tags"/>
                 </header>
                 <sheet>

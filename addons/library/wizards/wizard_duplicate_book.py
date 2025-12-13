@@ -53,7 +53,7 @@ class WizardDuplicateBook(models.TransientModel):
                 'date_published': original_book.date_published,
                 'book_genre': original_book.book_genre,
                 'author_id': original_book.author_id.id,
-                'tag_ids': original_book.tag_ids.ids,
+                'tag_ids': [(6, 0, original_book.tag_ids.ids)],
             })
         
         return res
@@ -80,7 +80,7 @@ class WizardDuplicateBook(models.TransientModel):
         # Devolver una acción para abrir inmediatamente el formulario del nuevo libro
         return {
             'type': 'ir.actions.act_window',
-            'res_model': 'book.model',
+            'res_model': 'library.book',
             'views': [(False, 'form')],
             'res_id': new_book.id,
             'target': 'current', # Abre el nuevo formulario en la misma ventana

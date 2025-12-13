@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View for WizardDuplicateBook -->
+    <record id="wizard_duplicate_book_view_form" model="ir.ui.view">
+        <field name="name">wizard.duplicate.book.form</field>
+        <field name="model">wizard.duplicate.book</field>
+        <field name="arch" type="xml">
+            <form string="Duplicate Book and Change ISBN">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="isbn"/>
+                        <field name="is_best_seller"/>
+                        <field name="edition_number"/>
+                        <field name="date_published"/>
+                        <field name="book_genre"/>
+                        <field name="author_id"/>
+                        <field name="tag_ids" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_duplicate_and_update" string="Duplicate" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open the wizard -->
+    <record id="action_wizard_duplicate_book" model="ir.actions.act_window">
+        <field name="name">Duplicate Book</field>
+        <field name="res_model">wizard.duplicate.book</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_library_book"/>
+        <field name="binding_view_types">form</field>
+    </record>
+</odoo>
