@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_daily_availability_tree" model="ir.ui.view">
+        <field name="name">daily_rental_availability_tree</field>
+        <field name="model">daily.rental.availability</field>
+        <field name="arch" type="xml">
+            <list string="Daily Rental Availability" default_order="date desc">
+                <field name="date"/>
+                <field name="book_id"/>
+                <field name="partner_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_daily_availability_pivot" model="ir.ui.view">
+        <field name="name">daily_rental_availability_pivot</field>
+        <field name="model">daily.rental.availability</field>
+        <field name="arch" type="xml">
+            <pivot string="Días de Alquiler por Libro">
+                <field name="book_id" type="row"/>
+                <field name="date" type="col" interval="month"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_daily_rental_availability" model="ir.actions.act_window">
+        <field name="name">Daily Rental Availability</field>
+        <field name="res_model">daily.rental.availability</field>
+        <field name="view_mode">list,pivot</field>
+    </record>
+
+    <menuitem id="menu_daily_rental_availability"
+            name="Daily Rental Availability"
+            parent="menu_library_master"
+            action="action_daily_rental_availability"
+            sequence="30"/>
+</odoo>
