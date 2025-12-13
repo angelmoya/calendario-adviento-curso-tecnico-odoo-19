@@ -27,6 +27,7 @@ Módulo de ejemplo desarrollado como parte de un curso de desarrollo en Odoo.
         'reports/book_rentals_report.xml',
         'reports/book_rentals_report_action.xml',
         'reports/daily_rental_availability_views.xml',
+        'data/library_cron.xml',
     ],
     'demo': [
         'demo/library_data.xml',

@@ -19,14 +19,22 @@
         <field name="model">library.book.rental</field>
         <field name="arch" type="xml">
             <form string="Book Rental Details">
+                <header>
+                    <button name="action_rent" type="object" string="Rent" class="oe_highlight" invisible="[('state', '!=', 'draft')]"/>
+                    <button name="action_return" type="object" string="Return" class="oe_highlight" invisible="[('state', '!=', 'rented')]"/>
+                    <button name="action_draft" type="object" string="Set to Draft" invisible="[('state', 'not in', ['rented', 'returned'])]"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,rented,returned"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="book_id"/>
                         <field name="partner_id"/>
                         <field name="start_date"/>
                         <field name="end_date"/>
+                        <field name="user_id"/>
                     </group>
                 </sheet>
+                <chatter/>
             </form>
         </field>
     </record>
