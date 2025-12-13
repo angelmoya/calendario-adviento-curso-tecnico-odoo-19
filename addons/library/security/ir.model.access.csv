@@ -5,3 +5,4 @@ access_library_author_user,library.author.user,model_library_author,library.grou
 access_library_author_manager,library.author.manager,model_library_author,library.group_library_manager,1,1,1,1
 access_library_tag_user,library.tag.user,model_library_tag,library.group_library_user,1,0,0,0
 access_library_tag_manager,library.tag.manager,model_library_tag,library.group_library_manager,1,1,1,1
+library.access_wizard_duplicate_book,access_wizard_duplicate_book,library.model_wizard_duplicate_book,library.group_library_manager,1,1,1,1
