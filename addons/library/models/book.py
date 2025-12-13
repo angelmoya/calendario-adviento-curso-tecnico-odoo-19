@@ -67,7 +67,8 @@ class LibraryBook(models.Model):
     _check_isbn_unique = models.Constraint(
         'unique(isbn)',
         'The ISBN must be unique across all books.',
-)
+    )
+
     @api.constrains('date_published')
     def _check_date_published(self):
         # for book in self:
@@ -91,11 +92,16 @@ class LibraryBook(models.Model):
         for book in self:
             book.tag_ids = False
     
+    # def action_update_autrho_tags_with_other_books_tags(self):
+    #     self.with_context(add_other_book_tags=True).action_update_author_tags()
+    
     def action_update_author_tags(self):
         # for book in self:
         #     if book.author_id:
         for book in self.filtered(lambda b: b.author_id):
             book.author_id.default_tag_ids = book.tag_ids
+            if self.env.context.get('add_other_book_tags'):
+                book.author_id.default_tag_ids |= book.author_id.book_ids.tag_ids
     
     def action_open_books_with_same_tags(self):
         self.ensure_one()

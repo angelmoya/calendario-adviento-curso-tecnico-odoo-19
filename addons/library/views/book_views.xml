@@ -42,6 +42,7 @@
                             <field name="tag_ids" widget="many2many_tags"/>
                             <button name="action_clean_tags" type="object" string="Clean Tags" class="oe_highlight"/>
                             <button name="action_update_author_tags" type="object" string="Update Author Tags"/>
+                            <button name="action_update_author_tags" type="object" string="Update Author Tags" context="{'add_other_book_tags': True}"/>
                         </group>
                     </group>
                     <notebook>
@@ -87,7 +88,32 @@
     <record id="action_library_book" model="ir.actions.act_window">
         <field name="name">Libros</field>
         <field name="res_model">library.book</field>
-        <field name="view_mode">list,form</field> <field name="help" type="html">
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                ¡Crea tu primer libro de la biblioteca!
+            </p>
+        </field>
+    </record>
+
+    <record id="action_library_book_novel" model="ir.actions.act_window">
+        <field name="name">Novel</field>
+        <field name="res_model">library.book</field>
+        <field name="context">{'default_book_genre': 'novel', 'search_default_novel': True}</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                ¡Crea tu primer libro de la biblioteca!
+            </p>
+        </field>
+    </record>
+
+    <record id="action_library_book_fiction" model="ir.actions.act_window">
+        <field name="name">Fiction</field>
+        <field name="res_model">library.book</field>
+        <field name="context">{'default_book_genre': 'fiction', 'search_default_fiction': True}</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 ¡Crea tu primer libro de la biblioteca!
             </p>
@@ -101,16 +127,33 @@
         web_icon="fa fa-book"/> 
     
     <menuitem 
+        id="menu_library_master_book" 
+        name="Library" 
+        parent="menu_library_root" 
+        sequence="10"/>
+    <menuitem 
         id="menu_library_master" 
         name="Maestros" 
         parent="menu_library_root" 
-        sequence="10"/>
+        sequence="20"/>
 
     <menuitem 
         id="menu_library_book" 
         name="Libros" 
-        parent="menu_library_master" 
+        parent="menu_library_master_book" 
         action="action_library_book" 
         sequence="10"/>
+    <menuitem 
+        id="menu_library_book_novel" 
+        name="Novel" 
+        parent="menu_library_master_book" 
+        action="action_library_book_novel" 
+        sequence="20"/>
+    <menuitem 
+        id="menu_library_book_fiction" 
+        name="Fiction" 
+        parent="menu_library_master_book" 
+        action="action_library_book_fiction" 
+        sequence="30"/>
 
 </odoo>
