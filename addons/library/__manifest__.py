@@ -23,6 +23,9 @@ Módulo de ejemplo desarrollado como parte de un curso de desarrollo en Odoo.
         'views/author_views.xml',
         'views/tag_views.xml',
         'views/product_template_views.xml',
+        'views/book_rental_views.xml',
+        'reports/book_rentals_report.xml',
+        'reports/book_rentals_report_action.xml',
     ],
     'demo': [
         'demo/library_data.xml',

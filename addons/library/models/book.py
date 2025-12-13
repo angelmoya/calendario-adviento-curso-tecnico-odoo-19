@@ -55,6 +55,11 @@ class LibraryBook(models.Model):
         string='User',
         default=lambda self: self.env.user
     )
+    rental_ids = fields.One2many(
+        comodel_name='library.book.rental',
+        inverse_name='book_id',
+        string='Rentals'
+    )
 
     @api.model
     def default_get(self, fields):

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_book_rentals">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="book">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="oe_structure"/>
+                        <h1>
+                            <span t-field="book.isbn"/>: <span t-field="book.name"/>
+                        </h1>
+
+                        <div class="row mb-4" id="informations">
+                            <div class="col" name="author_info">
+                                <strong>Author</strong>
+                                <div t-field="book.author_id"></div>
+                            </div>
+                            <div class="col" name="date_published_info">
+                                <strong>Date Published</strong>
+                                <div t-field="book.date_published"></div>
+                            </div>
+                            <div class="col" name="category_info">
+                                <strong>Genre</strong>
+                                <div t-field="book.book_genre"></div>
+                            </div>
+                        </div>
+
+                        <table class="table table-borderless">
+                            <thead style="display: table-row-group">
+                                <tr>
+                                    <th name="th_partner"><strong>Partner</strong></th>
+                                    <th name="th_expected_date" class="text-end"><strong>Start Date</strong></th>
+                                    <th name="th_quantity" class="text-end"><strong>End Date</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="book.rental_ids" t-as="rental">
+                                    <td>
+                                        <span t-field="rental.partner_id.name"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-field="rental.start_date"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-field="rental.end_date"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
