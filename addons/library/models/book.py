@@ -50,6 +50,11 @@ class LibraryBook(models.Model):
         string='Catalog Date',
         default=fields.Datetime.now
     )
+    user_id = fields.Many2one(
+        comodel_name='res.users',
+        string='User',
+        default=lambda self: self.env.user
+    )
 
     @api.model
     def default_get(self, fields):

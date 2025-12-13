@@ -20,4 +20,16 @@
             <field name="implied_ids" eval="[(4, ref('group_library_user'))]" />
             <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
+        <record id="library_book_rule_user" model="ir.rule">
+            <field name="name">Library Book Rule User</field>
+            <field name="model_id" ref="model_library_book"/>
+            <field name="domain_force">['|', ('user_id', '=', False), ('user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('group_library_user'))]"/>
+        </record>
+        <record id="library_book_rule_manager" model="ir.rule">
+            <field name="name">Library Book Rule Manager</field>
+            <field name="model_id" ref="model_library_book"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_library_manager'))]"/>
+        </record>
 </odoo>

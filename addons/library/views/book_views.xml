@@ -38,6 +38,7 @@
                             <field name="is_best_seller"/>
                             <field name="book_genre"/>
                             <field name="catalog_date"/>
+                            <field name="user_id"/>
                         </group>
                         <group>
                             <field name="tag_ids" widget="many2many_tags"/>
