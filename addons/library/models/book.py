@@ -43,6 +43,23 @@ class LibraryBook(models.Model):
         compute='_compute_product_qty',
         store=True
     )
+    active = fields.Boolean(
+        string='Active',
+        default=True)
+    catalog_date = fields.Datetime(
+        string='Catalog Date',
+        default=fields.Datetime.now
+    )
+
+    @api.model
+    def default_get(self, fields):
+        res = super().default_get(fields)
+        author = self.env['library.author'].search([], limit=1)
+        if author:
+            res.update({
+                'author_id': author.id
+            })
+        return res
 
     # _sql_constraints = [
     #     ('isbn_unique', 'unique(isbn)', 'The ISBN must be unique across all books.')

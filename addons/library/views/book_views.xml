@@ -30,11 +30,13 @@
                             <field name="isbn"/>
                             <field name="date_published"/>
                             <field name="edition_number"/>
+                            <field name="active"/>
                         </group>
                         <group>
                             <field name="author_id"/>
                             <field name="is_best_seller"/>
                             <field name="book_genre"/>
+                            <field name="catalog_date"/>
                         </group>
                         <group>
                             <field name="tag_ids" widget="many2many_tags"/>
